@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Track
+  - Checkpoint
+  - Wheel_F
+  - Wheel_B
   layers:
   - Default
   - TransparentFX

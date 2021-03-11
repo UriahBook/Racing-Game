@@ -29,8 +29,21 @@ public class RespawnSystem : MonoBehaviour
         if (c.gameObject.tag == "Track")
         {
             body.transform.position = startPos;
-            body.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             body.transform.rotation = Quaternion.identity;
+            body.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            body.GetComponent<Rigidbody2D>().angularVelocity = 0;
+
+            wheelB.GetComponent<Rigidbody2D>().angularVelocity = 0;
+            wheelF.GetComponent<Rigidbody2D>().angularVelocity = 0;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D c)
+    {
+        if (c.gameObject.tag == "Checkpoint")
+        {
+            startPos = c.transform.position;
+        }
+    }
+
 }
